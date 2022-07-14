@@ -76,9 +76,40 @@ def tic_tac_toe(board):
     '''
     # Replace `pass` with your code. 
     # Stay within the function. Only use the parameters as input. The function should return your answer.
+    def tic_tac_toe(board):
+    '''Tic Tac Toe. 
+    25 points.
+
+    Tic Tac Toe is a common paper-and-pencil game. 
+    Players must attempt to successfully draw a straight line of their symbol across a grid.
+    The player that does this first is considered the winner.
+
+    This function evaluates a tic tac toe board and returns the winner.
+
+    Please see "assignment-4-sample-data.py" for sample data. The board will adhere
+    to the same pattern. The board may by 3x3, 4x4, 5x5, or 6x6. The board will never
+    have more than one winner. The board will only ever have 2 unique symbols at the same time.
+
+    Parameters
+    ----------
+    board: list
+        the representation of the tic-tac-toe board as a square list of lists
+
+    Returns
+    -------
+    str
+        the symbol of the winner or "NO WINNER" if there is no winner
+    '''
+    # Replace `pass` with your code. 
+    # Stay within the function. Only use the parameters as input. The function should return your answer.
     winner = False
-    for player in ['X', 'O']:
-        
+    elements = set()
+    for row in board:
+        for character in set(row):
+            elements.add(character)
+    elements.discard("")
+    
+    for player in list(elements):
         #horizontal checking
         for row in board: 
             if len(set(row)) == 1 and set(row) == set(player):
